@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Saudi Healthy Recipe</title>
+    <link rel="stylesheet" href="recipes.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Add New Healthy Saudi Recipe</h2>
+
+    <form action="my-recipes.html">
+        
+        <label>Recipe Name:</label>
+        <input class="form-input" type="text" placeholder="e.g., Healthy Jareesh" required>
+
+        <label>Category:</label>
+        <select class="form-input" required>
+            <option value="">-- Choose Category --</option>
+            <option>Main Dishes </option>
+            <option>Healthy Sweets</option>
+            <option>Traditional Appetizers</option>
+            <option>Other</option>
+        </select>
+
+        <label>Description:</label>
+        <textarea class="form-input" placeholder="Briefly describe the recipe..." required></textarea>
+
+        <label>Upload Recipe Photo:</label>
+        <input type="file" accept="image/*" required>
+
+        <hr>
+
+        <h3>Ingredients:</h3>
+        <div id="ingredients-container">
+            <div class="ingredient-row">
+                <input type="text" placeholder="Ingredient Name (e.g., Oats)" required>
+                <input type="text" placeholder="Quantity (e.g., 2 cups)" required>
+            </div>
+        </div>
+        <button type="button" class="secondary-btn" onclick="addIngredient()">+ Add another ingredient</button>
+
+        <hr>
+
+        <h3>Instructions:</h3>
+        <div id="instructions-container">
+            <div class="step-row">
+                <label>Step 1:</label>
+                <input type="text" class="form-input" placeholder="Describe the first step" required>
+            </div>
+        </div>
+        <button type="button" class="secondary-btn" onclick="addStep()">+ Add another step</button>
+
+        <hr>
+
+        <h3>Video Content (Optional):</h3>
+        <label>Upload Video File:</label>
+        <input type="file" accept="video/*">
+        
+        <label>Or YouTube / Video URL:</label>
+        <input type="url" class="form-input" placeholder="https://www.youtube.com/...">
+
+        <br><br>
+        <button type="submit" class="submit-btn">Add Recipe</button>
+    </form>
+</div>
+
+<script>
+    function addIngredient() {
+        const container = document.getElementById('ingredients-container');
+        const div = document.createElement('div');
+        div.className = 'ingredient-row';
+        div.innerHTML = `
+            <input type="text" placeholder="Ingredient Name" required>
+            <input type="text" placeholder="Quantity" required>
+        `;
+        container.appendChild(div);
+    }
+
+    let stepCount = 1;
+    function addStep() {
+        stepCount++;
+        const container = document.getElementById('instructions-container');
+        const div = document.createElement('div');
+        div.className = 'step-row';
+        div.style.marginTop = "10px";
+        div.innerHTML = `
+            <label>Step ${stepCount}:</label>
+            <input type="text" class="form-input" placeholder="Describe next step" required>
+        `;
+        container.appendChild(div);
+    }
+</script>
+
+</body>
+</html>

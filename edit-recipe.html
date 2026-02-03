@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Recipe - Healthy Saudi Cuisine</title>
+    <link rel="stylesheet" href="recipes.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Edit Recipe</h2>
+
+    <form action="my-recipes.html">
+        
+        <label>Name:</label>
+        <input class="form-input" type="text" value="Oat Jareesh" required>
+
+        <label>Category:</label>
+        <select class="form-input" required>
+            <option selected>Main Dishes </option>
+            <option>Healthy Sweets</option>
+            <option>Traditional Appetizers</option>
+        </select>
+
+        <label>Description:</label>
+        <textarea class="form-input" required>A healthy, fiber-rich version of the traditional Saudi Jareesh using whole-grain oats instead of crushed wheat, served with low-fat Greek yogurt.</textarea>
+
+        <label>Current Photo:</label>
+        <div class="current-media">
+            <img src="jareesh.jpg" alt="Current Jareesh Photo" style="width: 150px; border-radius: 10px;">
+        </div>
+
+        <label>Upload New Recipe Photo (Optional):</label>
+        <input type="file" accept="image/*">
+
+        <hr>
+
+        <h3>Ingredients:</h3>
+        <div id="ingredients-container">
+            <div class="ingredient-row">
+                <input type="text" value="Steel-cut Oats" required>
+                <input type="text" value="2 cups" required>
+            </div>
+            <div class="ingredient-row">
+                <input type="text" value="Greek Yogurt (Low-fat)" required>
+                <input type="text" value="1 liter" required>
+            </div>
+            <div class="ingredient-row">
+                <input type="text" value="Chicken breast" required>
+                <input type="text" value="500g" required>
+            </div>
+        </div>
+        <button type="button" class="add-btn" style="background: #2c3e50;" onclick="addIngredient()">+ Add another ingredient</button>
+
+        <hr>
+
+        <h3>Instructions:</h3>
+        <div id="instructions-container">
+            <div class="step-row">
+                <label>Step 1:</label>
+                <input type="text" class="form-input" value="Sauté onions and chicken until golden." required>
+            </div>
+            <div class="step-row">
+                <label>Step 2:</label>
+                <input type="text" class="form-input" value="Add oats and water, then simmer for 40 minutes." required>
+            </div>
+        </div>
+        <button type="button" class="add-btn" style="background: #2c3e50;" onclick="addStep()">+ Add another step</button>
+
+        <hr>
+
+        <label>Current Video:</label>
+        <div class="current-media">
+            <p><i>[jareesh_cooking_video.mp4]</i></p>
+        </div>
+
+        <label>Video URL:</label>
+        <input type="url" class="form-input" value="https://www.tiktok.com/@joharh_/video/7210876805094378753">
+
+        <br><br>
+        <button type="submit" class="add-btn" style="width: 100%; padding: 15px; font-size: 18px;">Update Recipe</button>
+    </form>
+</div>
+
+<script>
+    function addIngredient() {
+        const container = document.getElementById('ingredients-container');
+        const div = document.createElement('div');
+        div.className = 'ingredient-row';
+        div.style.marginTop = "10px";
+        div.innerHTML = `
+            <input type="text" placeholder="Ingredient Name" required> 
+            <input type="text" placeholder="Quantity" required>
+        `;
+        container.appendChild(div);
+    }
+
+    let stepCount = 2;
+    function addStep() {
+        stepCount++;
+        const container = document.getElementById('instructions-container');
+        const div = document.createElement('div');
+        div.className = 'step-row';
+        div.style.marginTop = "10px";
+        div.innerHTML = `
+            <label>Step ${stepCount}:</label> 
+            <input type="text" class="form-input" required>
+        `;
+        container.appendChild(div);
+    }
+</script>
+
+</body>
+</html>
