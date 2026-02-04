@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Admin Dashboard</h1>
+</header>
+
+<section>
+  <h2>Welcome, Admin</h2>
+  <p><strong>Name:</strong> Admin User</p>
+  <p><strong>Email:</strong> admin@healthyrecipes.com</p>
+</section>
+
+<!-- Pending reports -->
+<section>
+  <h3>Pending Recipe Reports</h3>
+  <table border="1">
+    <tr>
+      <th>Recipe</th>
+      <th>Recipe Creator</th>
+      <th>Action</th>
+    </tr>
+
+    <tr>
+      <td><a href="view-recipe.html">Grilled Chicken Salad</a></td>
+      <td>
+        <img src="images/user.jpg" width="50">
+        Sarah Ahmed
+      </td>
+      <td>
+        <form action="admin.html">
+          <button type="submit">Block User</button>
+          <button type="submit">Dismiss Report</button>
+        </form>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<!-- Blocked users -->
+<section>
+  <h3>Blocked Users</h3>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+    <tr>
+      <td>John Ali</td>
+      <td>john@email.com</td>
+    </tr>
+  </table>
+</section>
+
+<!-- Sign out -->
+<a href="index.html">Sign Out</a>
+
+<footer>
+  <p>&copy; 2026 Healthy Recipes</p>
+</footer>
+
+</body>
+</html>
