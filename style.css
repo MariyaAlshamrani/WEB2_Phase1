@@ -13,19 +13,45 @@ body {
 }
 
 /* ===== Header & Footer ===== */
-header, footer {
+/* ===== Main Header ===== */
+.main-header {
   background-color: #2f7d6d;
   color: #fff;
-  padding: 15px 30px;
+  padding: 20px;
   text-align: center;
 }
 
-footer {
+.main-header h1 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 5px;
+}
+
+.main-header .tagline {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.main-header nav a {
+  color: #eaf6f3;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.main-header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Main Footer ===== */
+.main-footer {
+  background-color: #2f7d6d;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
   margin-top: 40px;
   font-size: 14px;
 }
-
-/* ===== General Sections ===== */
+`z`/* ===== General Sections ===== */
 section {
   background: #fff;
   margin: 20px auto;
@@ -191,3 +217,4 @@ font-family: 'Playfair Display', serif;
 font-weight: 600;
 letter-spacing: 0.4px;
 }
+
