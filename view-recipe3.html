@@ -1,122 +1,305 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>View Recipe</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="main-header">
 
-    <div class="logo-area">
-        <img src="photo/logo.jpeg" alt="Logo">
-        <div>
-            <h1>من دارنا</h1>
-            <span class="tagline">Healthy Saudi Cuisine</span>
-        </div>
+  <style>
+    /* ===== Reset ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #f7f7f7; line-height: 1.6; }
+
+    /* ===== Header ===== */
+    .main-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 5%;
+      background:#2f7d6d;
+      color:#fff;
+    }
+
+    .logo-area{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo-area img{ width:45px; height:auto; }
+
+    .logo-area h1{ font-size:1.5rem; margin:0; }
+    .tagline{ display:block; font-size:.75rem; opacity:.85; margin-top:2px; }
+
+    nav{ display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end; }
+    nav a{ color:#fff; text-decoration:none; font-size:.9rem; }
+    .sign-out{ background:#e74c3c; padding:6px 12px; border-radius:6px; }
+
+    /* ===== Page wrapper ===== */
+    .page{
+      max-width: 900px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+
+    .recipe-card{
+      background:#fff;
+      border:1px solid #ddd;
+      border-radius:14px;
+      padding:22px;
+      box-shadow:0 10px 25px rgba(0,0,0,.05);
+    }
+
+    .page-title{
+      font-size:1.3rem;
+      margin-bottom:14px;
+    }
+
+    /* ===== Title + Actions ===== */
+    .recipe-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:16px;
+      margin-bottom:14px;
+    }
+
+    .recipe-title{ font-size:1.6rem; margin:0; }
+
+    .actions{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      min-width:170px;
+    }
+
+    .actions button{
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid #ccc;
+      background:#f4f4f4;
+      cursor:pointer;
+    }
+
+    /* ===== Recipe photo ===== */
+    .recipe-photo{
+      display:flex;
+      justify-content:center;
+      margin:16px 0 18px;
+    }
+
+    .recipe-photo img{
+      width: min(520px, 100%);
+      height:auto;
+      border-radius:12px;
+      border:1px solid #ddd;
+      object-fit:cover;
+    }
+
+    /* ===== Blocks ===== */
+    .block{
+      border:1px solid #e6e6e6;
+      border-radius:12px;
+      padding:14px;
+      margin-top:14px;
+    }
+
+    .block-title{
+      font-size:1rem;
+      margin-bottom:10px;
+    }
+
+    /* Creator row */
+    .creator{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .avatar{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      border:1px solid #ccc;
+      object-fit:cover;
+    }
+
+    .details p{ margin:6px 0; }
+
+    /* Lists */
+    .list{ padding-left:20px; }
+    .list li{ margin-bottom:6px; }
+
+    /* Video */
+    .video-link{
+      display:inline-block;
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid #ccc;
+      background:#f4f4f4;
+      text-decoration:none;
+      color:#000;
+    }
+
+    /* Comments */
+    .comment{
+      border:1px solid #ddd;
+      border-radius:10px;
+      padding:10px;
+      margin-top:10px;
+    }
+    .comment p{ margin:0 0 6px; }
+
+    .comment-form{
+      margin-top:12px;
+      display:grid;
+      gap:10px;
+    }
+
+    .comment-form textarea{
+      min-height:80px;
+      padding:10px;
+      border-radius:10px;
+      border:1px solid #ccc;
+      resize:vertical;
+      font-family:inherit;
+    }
+
+    .comment-form button{
+      width:fit-content;
+      padding:10px 14px;
+      border-radius:10px;
+      border:1px solid #ccc;
+      background:#f4f4f4;
+      cursor:pointer;
+      justify-self:end;
+    }
+
+    /* Footer */
+    .main-footer{
+      margin-top:35px;
+      padding:28px;
+      text-align:center;
+      background:#2f7d6d;
+      color:#fff;
+    }
+
+    /* Responsive */
+    @media (max-width:700px){
+      .recipe-top{ flex-direction:column; }
+      .actions{ flex-direction:row; flex-wrap:wrap; min-width:0; }
+      .comment-form button{ justify-self:stretch; width:100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="logo-area">
+    <img src="photo/logo.jpeg" alt="Logo">
+    <div>
+      <h1>من دارنا</h1>
+      <span class="tagline">Healthy Saudi Cuisine</span>
+    </div>
+  </div>
+
+  <nav>
+    <a href="user.html">Home</a>
+    <a href="my-recipes.html">My Recipes</a>
+    <a href="add-recipe.html">Add Recipe</a>
+    <a href="index.html" class="sign-out">Sign Out</a>
+  </nav>
+</header>
+
+<main class="page">
+  <article class="recipe-card">
+
+    <h1 class="page-title">Healthy Recipes</h1>
+
+    <div class="recipe-top">
+      <h2 class="recipe-title">Date Energy Bites</h2>
+
+      <div class="actions">
+        <button type="button">Add to Favourites</button>
+        <button type="button">Like</button>
+        <button type="button">Report</button>
+      </div>
     </div>
 
-    <nav>
-        <a href="user.html">Home</a>
-        <a href="my-recipes.html">My Recipes</a>
-        <a href="add-recipe.html" class="add-recipe-btn">Add Recipe</a>
-        <a href="index.html" class="sign-out">Sign Out</a>
-    </nav>
+    <div class="recipe-photo">
+      <img src="photo/dates.jpeg" alt="date energy bites">
+    </div>
 
-</header>
-<header>
-  <h1>Healthy Recipes</h1>
-</header>
+    <section class="block">
+      <h3 class="block-title">Recipe Creator</h3>
+      <div class="creator">
+        <img class="avatar" src="images/user.jpg" alt="Creator Photo">
+        <p>Created by: <strong>Raghad M.</strong></p>
+      </div>
+    </section>
 
+    <section class="block">
+      <h3 class="block-title">Details</h3>
+      <div class="details">
+        <p><strong>Category:</strong> Snack</p>
+        <p>Dates Energy Bites</p>
+      </div>
+    </section>
 
-<div class="actions">
-  <button>Add to Favourites</button>
-  <button>Like</button>
-  <button>Report</button>
-</div>
+    <section class="block">
+      <h3 class="block-title">Ingredients</h3>
+      <ul class="list">
+        <li>250g Pressed Dates</li>
+        <li>1 cup of Toasted Oats</li>
+        <li>1/2 cup of Crushed Walnuts or Almonds</li>
+        <li>1 tbsp of Cinnamon and Cardamom</li>
+        <li>Sesame seeds for coating</li>
+      </ul>
+    </section>
 
+    <section class="block">
+      <h3 class="block-title">Instructions</h3>
+      <ol class="list">
+        <li>Mix the dates with the toasted oats and spices in a large bowl.</li>
+        <li>Knead the mixture until it becomes a cohesive dough.</li>
+        <li>Form the dough into small, bite-sized balls.</li>
+        <li>Roll the balls in sesame seeds or crushed pistachios for a crunchy finish.</li>
+      </ol>
+    </section>
 
-<section class="recipe-main">
-  <h2>Date Energy Bites </h2>
-<img src="photo/dates.jpeg" alt="date energy balls">
-</section>
+    <section class="block">
+      <h3 class="block-title">Video</h3>
+      <a class="video-link" href="https://www.tiktok.com/@nahoola.s/video/7322159445994114322?lang=ar" target="_blank">
+        Watch On TikTok
+      </a>
+    </section>
 
-<section class="creator">
-  <img src="photo/dates.jpeg" alt="Recipe Photo" width="300">
-  <p>Created by: <strong>Raghad M.</strong></p>
-</section>
+    <section class="block">
+      <h3 class="block-title">Comments</h3>
 
+      <div class="comment">
+        <p><strong>Ahmed:</strong> Looks delicious!</p>
+        <small>2026-02-01</small>
+      </div>
 
-<section>
-  <p><strong>Category:</strong>Snack</p>
-  <p>Dates Energy bites</p>
-</section>
+      <div class="comment">
+        <p><strong>Lina:</strong> Tried it and loved it 😍</p>
+        <small>2026-01-30</small>
+      </div>
 
-<!-- Ingredients -->
-<section>
-  <h3>Ingredients</h3>
-<ul>
-                            <li>250g Pressed Dates</li>
-                            <li>1 cup of Toasted Oats.</li>
-                            <li>1/2 cup of Crushed Walnuts or Almonds.</li>
-                            <li>1 tbsp of Cinnamon and Cardamom.</li>
-                            <li>Sesame seeds for coating</li>
+      <form class="comment-form">
+        <textarea placeholder="Write a comment..."></textarea>
+        <button type="submit">Add Comment</button>
+      </form>
+    </section>
 
-                        </ul>
-
-</section>
-
-<!-- Instructions -->
-<section>
-  <h3>Instructions</h3>
-    <ol>
-                            <li>Mix the dates with the toasted oats and spices in a large bowl.</li>
-                            <li>Knead the mixture until it becomes a cohesive dough.</li>
-                            <li>Form the dough into small, bite-sized balls.</li>
-							<li>Roll the balls in sesame seeds or crushed pistachios for a crunchy finish.</li>
-
-                        </ol>
-</section>
-
-
-<section>
-  <h3>Recipe Video</h3>
-  <a href="https://www.tiktok.com/@nahoola.s/video/7322159445994114322?lang=ar" target="_blank">Watch On Tiktok</a>
-</section>
-
-
-<section class="comments">
-  <h3>Comments</h3>
-
-  <div class="comment">
-    <p><strong>Ahmed:</strong> Looks delicious!</p>
-    <small>2026-02-01</small>
-  </div>
-
-  <div class="comment">
-    <p><strong>Lina:</strong> Tried it and loved it 😍</p>
-    <small>2026-01-30</small>
-  </div>
-
-
-  <form>
-    <textarea placeholder="Write a comment..."></textarea><br>
-    <button type="submit">Add Comment</button>
-  </form>
-</section>
-
+  </article>
+</main>
 
 <footer class="main-footer">
-    <div class="footer-content">
-        <p>© 2026 Min Darna – Healthy Saudi Cuisine</p>
-        <p>Inspired by Saudi home kitchens with a healthy twist 🌿</p>
-    </div>
+  <p>© 2026 Min Darna – Healthy Saudi Cuisine</p>
+  <p>Inspired by Saudi home kitchens with a healthy twist 🌿</p>
 </footer>
 
 </body>
-
 </html>
-
-
-
-
