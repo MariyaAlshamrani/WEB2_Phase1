@@ -739,3 +739,55 @@ nav a[href*="index"] {
 .english-title {
   font-size: 1rem;
 }
+
+/* ===== Header (LOCKED) - keep same on all pages ===== */
+.main-header{
+  height: 72px;                 /* ثبتي ارتفاع واحد */
+  padding: 0 5%;                /* لا تستخدمين padding فوق وتحت */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.logo-area img{
+  width: 44px;                  /* ثبتي حجم اللوقو */
+  height: 44px;
+  object-fit: cover;
+  border-radius: 6px;           /* اختياري */
+}
+
+.logo-area h1{
+  font-size: 22px;              /* ثبتي حجم العنوان */
+  line-height: 1;
+  margin: 0;
+}
+
+.logo-area .tagline{
+  display:block;
+  font-size: 12px;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+/* nav */
+.main-header nav{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+}
+
+.main-header nav a{
+  display:inline-flex;
+  align-items:center;
+  height: 36px;                 /* يثبت ارتفاع الروابط/الأزرار */
+  padding: 0 12px;
+  border-radius: 8px;
+  text-decoration:none;
+  font-size: 14px;
+}
