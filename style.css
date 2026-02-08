@@ -1,7 +1,5 @@
-/* ===== استيراد الخطوط ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
 
-/* ===== الإعدادات العامة ===== */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +8,6 @@
 
 html {
     background-color: #fcfbf9;
-    /* نقش خفيف لإعطاء فخامة للملف */
     background-image: repeating-linear-gradient(
         135deg,
         rgba(0,0,0,0.025) 0,
@@ -28,7 +25,6 @@ body {
     background: transparent;
 }
 
-/* ===== العناوين ===== */
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
     font-weight: 600;
@@ -36,7 +32,6 @@ h1, h2, h3 {
     color: #2f7d6d;
 }
 
-/* ===== الهيدر (Header) ===== */
 header, .main-header {
     background-color: #2f7d6d;
     color: #fff;
@@ -73,7 +68,6 @@ header nav a:hover {
     opacity: 0.9;
 }
 
-/* ===== الحاويات الرئيسية ===== */
 main, .container, .user-page {
     max-width: 1100px;
     margin: 40px auto;
@@ -90,7 +84,6 @@ section {
     border-radius: 8px;
 }
 
-/* ===== الجداول (Tables) ===== */
 .table-container {
     overflow-x: auto;
 }
@@ -124,7 +117,6 @@ table img {
     object-fit: cover;
 }
 
-/* ===== الأزرار (Buttons) ===== */
 button, .add-btn, .submit-btn, .secondary-btn {
     background-color: #2f7d6d;
     color: #fff;
@@ -151,7 +143,6 @@ button:hover, .submit-btn:hover {
     background-color: #333;
 }
 
-/* ===== الروابط (Links) ===== */
 a {
     color: #2f7d6d;
     text-decoration: none;
@@ -163,7 +154,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ===== القوائم ===== */
 ul, ol {
     margin-left: 25px;
     margin-top: 10px;
@@ -173,7 +163,6 @@ li {
     margin-bottom: 8px;
 }
 
-/* ===== التعليقات والفورم ===== */
 textarea, input[type="text"], input[type="url"], select {
     width: 100%;
     padding: 12px;
@@ -189,7 +178,6 @@ textarea:focus, input:focus {
     box-shadow: 0 0 0 2px rgba(47, 125, 109, 0.1);
 }
 
-/* ===== الفوتر (Footer) ===== */
 footer, .main-footer {
     background-color: #2f7d6d;
     color: #fff;
@@ -204,31 +192,28 @@ footer p {
     opacity: 0.9;
 }
 
-/* ===== تسجيل الخروج ===== */
 a[href*="index"] {
     display: block;
     width: fit-content;
     margin: 20px auto;
     font-weight: bold;
-    color: #d9534f; /* لون أحمر هادئ للتمييز */
+    color: #d9534f; 
 }
 
-/* ===== Header المحسن والجذاب ===== */
 .main-header {
     background-color: #2f7d6d;
-    background-image: linear-gradient(to right, #2f7d6d, #256559); /* تدرج لوني يعطي عمق */
+    background-image: linear-gradient(to right, #2f7d6d, #256559); 
     color: #fff;
-    padding: 15px 5%; /* مسافة جانبية متوازنة */
+    padding: 15px 5%;
     display: flex;
-    justify-content: space-between; /* توزيع العناصر يميناً ويساراً */
-    align-items: center; /* محاذاة العناصر عمودياً */
+    justify-content: space-between;
+    align-items: center; 
     box-shadow: 0 2px 15px rgba(0,0,0,0.15);
-    position: sticky; /* جعل الهيدر ثابتاً عند التمرير */
+    position: sticky; 
     top: 0;
     z-index: 1000;
 }
 
-/* القسم الأيسر: اللوجو والاسم */
 .logo-area {
     display: flex;
     align-items: center;
@@ -248,10 +233,9 @@ a[href*="index"] {
     font-size: 0.8rem;
     opacity: 0.8;
     font-style: italic;
-    display: block; /* لضمان ظهورها تحت الاسم أو بجانبه */
+    display: block; 
 }
 
-/* القسم الأيمن: القائمة والأزرار */
 nav {
     display: flex;
     align-items: center;
@@ -268,13 +252,11 @@ nav a {
     transition: all 0.3s ease;
 }
 
-/* تأثير عند التمرير على الروابط */
 nav a:hover {
     background: rgba(255, 255, 255, 0.1);
     text-decoration: none;
 }
 
-/* تمييز زر "Add Recipe" ليظهر كبوتون جذاب */
 nav a[href*="add-recipe"] {
     background-color: #fcfbf9;
     color: #2f7d6d;
@@ -285,19 +267,16 @@ nav a[href*="add-recipe"] {
 
 nav a[href*="add-recipe"]:hover {
     background-color: #e0e0e0;
-    transform: translateY(-2px); /* رفعة بسيطة عند التمرير */
+    transform: translateY(-2px); 
 }
 
-/* زر تسجيل الخروج بلون مختلف قليلاً */
 nav a[href*="index"] {
     opacity: 0.8;
     font-size: 0.85rem;
 }
 /*============================================================================*/
-    /* ===== 1. استيراد الخطوط ===== */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
 
-    /* ===== 2. إعدادات الصفحة العامة ===== */
     * {
         margin: 0;
         padding: 0;
@@ -322,7 +301,6 @@ nav a[href*="index"] {
         line-height: 1.6;
     }
 
-    /* ===== 3. الهيدر المطور (Header) ===== */
     .main-header {
         background-color: #2f7d6d;
         background-image: linear-gradient(to right, #2f7d6d, #256559);
@@ -353,7 +331,6 @@ nav a[href*="index"] {
         margin-top: -5px;
     }
 
-    /* القائمة */
     nav {
         display: flex;
         align-items: center;
@@ -374,10 +351,9 @@ nav a[href*="index"] {
         background: rgba(255, 255, 255, 0.1);
     }
 
-    /* ===== إصلاح زر Add Recipe الصارخ ===== */
     nav a[href*="add-recipe"] {
-        background-color: #fcfbf9 !important; /* خلفية فاتحة */
-        color: #2f7d6d !important;           /* نص أخضر داكن وواضح */
+        background-color: #fcfbf9 !important; 
+        color: #2f7d6d !important;           
         font-weight: 700 !important;
         padding: 10px 18px !important;
         box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -389,7 +365,6 @@ nav a[href*="index"] {
         box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
-    /* ===== 4. الحاويات والمحتوى ===== */
     .container, main {
         max-width: 1100px;
         margin: 40px auto;
@@ -406,7 +381,6 @@ nav a[href*="index"] {
         text-align: center;
     }
 
-    /* ===== 5. الجداول والأزرار ===== */
     table {
         width: 100%;
         border-collapse: collapse;
@@ -437,7 +411,6 @@ nav a[href*="index"] {
         width: 100%;
     }
 
-    /* ===== 6. الفوتر ===== */
     .main-footer {
         background-color: #2f7d6d;
         color: white;
@@ -452,7 +425,7 @@ nav a[href*="index"] {
     }
 
 .sign-out {
-    background-color: #e74c3c !important; /* أحمر داكن */
+    background-color: #e74c3c !important; 
     color: white !important;
     padding: 8px 15px !important;
     border-radius: 6px;
@@ -470,9 +443,9 @@ nav a[href*="index"] {
 }
 
 .main-header img {
-    width: 45px;        /* حجم صغير */
+    width: 45px;        
     height: auto;
-    margin-right: 12px; /* مسافة عن العنوان */
+    margin-right: 12px; 
 }
 
 .main-header > div {
@@ -486,12 +459,11 @@ nav a[href*="index"] {
 }
 
 .logo-area img {
-    width: 45px;   /* حجم اللوقو */
+    width: 45px;   
     height: auto;
 }
 
 
-/* ===== General Layout ===== */
 .page{
   max-width: 900px;
   margin: 30px auto;
@@ -506,7 +478,6 @@ nav a[href*="index"] {
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* ===== Top row: title + actions ===== */
 .recipe-top{
   display: flex;
   align-items: flex-start;
@@ -520,10 +491,9 @@ nav a[href*="index"] {
   font-size: 1.6rem;
 }
 
-/* Actions buttons (right side) */
 .actions{
   display: flex;
-  flex-direction: column; /* نفس الوايرفريم: فوق بعض */
+  flex-direction: column; 
   gap: 8px;
   min-width: 170px;
 }
@@ -536,7 +506,6 @@ nav a[href*="index"] {
   cursor: pointer;
 }
 
-/* ===== Photo ===== */
 .recipe-photo{
   display: flex;
   justify-content: center;
@@ -551,7 +520,6 @@ nav a[href*="index"] {
   object-fit: cover;
 }
 
-/* ===== Blocks ===== */
 .block{
   border: 1px solid #eee;
   border-radius: 12px;
@@ -593,7 +561,6 @@ nav a[href*="index"] {
   margin: 6px 0;
 }
 
-/* Video link */
 .video-link{
   display: inline-block;
   padding: 10px 12px;
@@ -602,7 +569,6 @@ nav a[href*="index"] {
   background: #fafafa;
 }
 
-/* ===== Comments ===== */
 .comment{
   border: 1px solid #eee;
   border-radius: 12px;
@@ -639,14 +605,13 @@ nav a[href*="index"] {
   cursor: pointer;
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 700px){
   .recipe-top{
     flex-direction: column;
     align-items: stretch;
   }
   .actions{
-    flex-direction: row;   /* بالموبايل تصير بجانب بعض */
+    flex-direction: row;  
     flex-wrap: wrap;
     min-width: 0;
   }
@@ -661,13 +626,12 @@ nav a[href*="index"] {
   align-items: center;
 }
 
-/* ستايل عام للأزرار */
 .actions button {
   display: flex;
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  border-radius: 999px; /* pill shape */
+  border-radius: 999px; 
   font-size: 0.85rem;
   font-weight: 500;
   border: none;
@@ -675,7 +639,6 @@ nav a[href*="index"] {
   transition: all 0.25s ease;
 }
 
-/* Favourite */
 .actions button:nth-child(1) {
   background-color: #2f7d6d;
   color: white;
@@ -686,7 +649,6 @@ nav a[href*="index"] {
   transform: translateY(-2px);
 }
 
-/* Like */
 .actions button:nth-child(2) {
   background-color: #3a8f8a;
   color: white;
@@ -714,10 +676,9 @@ nav a[href*="index"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #000; /* فقط للتوضيح مثل الرسم */
+  border: 2px solid #000;  
 }
 
-/* اللوقو أعلى يسار */
 .logo {
   position: absolute;
   top: 20px;
@@ -726,7 +687,6 @@ nav a[href*="index"] {
   height: auto;
 }
 
-/* النص بالمنتصف */
 .header-center {
   text-align: center;
 }
@@ -740,10 +700,9 @@ nav a[href*="index"] {
   font-size: 1rem;
 }
 
-/* ===== Header (LOCKED) - keep same on all pages ===== */
 .main-header{
-  height: 72px;                 /* ثبتي ارتفاع واحد */
-  padding: 0 5%;                /* لا تستخدمين padding فوق وتحت */
+  height: 72px;                 
+  padding: 0 5%;                
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -756,14 +715,14 @@ nav a[href*="index"] {
 }
 
 .logo-area img{
-  width: 44px;                  /* ثبتي حجم اللوقو */
+  width: 44px;                  
   height: 44px;
   object-fit: cover;
-  border-radius: 6px;           /* اختياري */
+  border-radius: 6px;           
 }
 
 .logo-area h1{
-  font-size: 22px;              /* ثبتي حجم العنوان */
+  font-size: 22px;
   line-height: 1;
   margin: 0;
 }
@@ -775,7 +734,6 @@ nav a[href*="index"] {
   margin-top: 4px;
 }
 
-/* nav */
 .main-header nav{
   display:flex;
   align-items:center;
@@ -785,9 +743,10 @@ nav a[href*="index"] {
 .main-header nav a{
   display:inline-flex;
   align-items:center;
-  height: 36px;                 /* يثبت ارتفاع الروابط/الأزرار */
+  height: 36px;                 
   padding: 0 12px;
   border-radius: 8px;
   text-decoration:none;
   font-size: 14px;
 }
+
