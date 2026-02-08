@@ -491,3 +491,168 @@ nav a[href*="index"] {
 }
 
 
+/* ===== General Layout ===== */
+.page{
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+
+.recipe-card{
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* ===== Top row: title + actions ===== */
+.recipe-top{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.recipe-title{
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+/* Actions buttons (right side) */
+.actions{
+  display: flex;
+  flex-direction: column; /* نفس الوايرفريم: فوق بعض */
+  gap: 8px;
+  min-width: 170px;
+}
+
+.actions button{
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  cursor: pointer;
+}
+
+/* ===== Photo ===== */
+.recipe-photo{
+  display: flex;
+  justify-content: center;
+  margin: 12px 0 18px;
+}
+
+.recipe-photo img{
+  width: min(520px, 100%);
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  object-fit: cover;
+}
+
+/* ===== Blocks ===== */
+.block{
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 14px 14px;
+  margin-top: 14px;
+}
+
+.block-title{
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+/* Creator row */
+.creator{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #e6e6e6;
+}
+
+.details p{
+  margin: 6px 0;
+}
+
+/* Lists */
+.list{
+  margin: 0;
+  padding-left: 20px;
+}
+
+.list li{
+  margin: 6px 0;
+}
+
+/* Video link */
+.video-link{
+  display: inline-block;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+/* ===== Comments ===== */
+.comment{
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.comment p{
+  margin: 0 0 6px;
+}
+
+.comment-form{
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.comment-form textarea{
+  width: 100%;
+  min-height: 90px;
+  resize: vertical;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  font-family: inherit;
+}
+
+.comment-form button{
+  justify-self: end;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  cursor: pointer;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 700px){
+  .recipe-top{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .actions{
+    flex-direction: row;   /* بالموبايل تصير بجانب بعض */
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+  .comment-form button{
+    justify-self: stretch;
+  }
+}
+
+
