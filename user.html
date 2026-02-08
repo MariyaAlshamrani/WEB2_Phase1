@@ -279,8 +279,6 @@ textarea {
     margin-top: 30px;
     transition: background 0.3s ease, transform 0.2s ease;
 }
-
-
 </style>
 </head>
 
@@ -302,10 +300,10 @@ textarea {
         <a href="index.html" class="sign-out">Sign Out</a>
     </nav>
 
-</header><section class="welcome-wrap">
+</header>
+<section class="welcome-wrap">
 <h2>Welcome, <strong id="displayFirstName">Sarah</strong></h2>
 </section>
-
 
 <section class="section-box">
 <h3>My Information</h3>
@@ -321,14 +319,12 @@ textarea {
 </div>
 </section>
 
-
 <section class="section-box">
 <h3><a href="my-recipes.html">My Recipes</a></h3>
 
 <p><strong>Total number of recipes:</strong> 15</p>
 <p><strong>Total likes for all user’s recipes:</strong> 132</p>
 </section>
-
 
 <section class="section-box">
 <h3>All Available Recipes</h3>
@@ -406,7 +402,6 @@ textarea {
 </div>
 </section>
 
-
 <section class="section-box">
 <h3>My Favourite Recipes ♥</h3>
 
@@ -441,7 +436,6 @@ textarea {
 </div>
 </section>
 
-
 <div class="bottom-signout">
 <a class="signout-link" href="index.html">Sign out</a>
 </div>
@@ -454,19 +448,17 @@ textarea {
 </footer>
 
 <script>
-    window.onload = function() {
-        const firstName = localStorage.getItem('firstName');
-        if (firstName) {
-            // تحديث الاسم في الترحيب
-            if(document.getElementById('displayFirstName')) {
-                document.getElementById('displayFirstName').textContent = firstName;
-            }
-            // تحديث الاسم في جدول المعلومات
-            if(document.getElementById('infoFirstName')) {
-                document.getElementById('infoFirstName').textContent = firstName;
-            }
+window.onload = function() {
+    const firstName = localStorage.getItem('user_firstName') || localStorage.getItem('firstName');
+    if (firstName) {
+        if (document.getElementById('displayFirstName')) {
+            document.getElementById('displayFirstName').textContent = firstName;
         }
-    };
+        if (document.getElementById('infoFirstName')) {
+            document.getElementById('infoFirstName').textContent = firstName;
+        }
+    }
+};
 </script>
 
 </body>
