@@ -463,3 +463,21 @@ nav a[href*="index"] {
     background-color: #c0392b !important;
     transform: scale(1.05);
 }
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-header img {
+    width: 45px;        /* حجم صغير */
+    height: auto;
+    margin-right: 12px; /* مسافة عن العنوان */
+}
+
+.main-header > div {
+    display: flex;
+    align-items: center;
+}
+
+
