@@ -451,3 +451,15 @@ nav a[href*="index"] {
         nav { flex-wrap: wrap; justify-content: center; }
     }
 
+.sign-out {
+    background-color: #e74c3c !important; /* أحمر داكن */
+    color: white !important;
+    padding: 8px 15px !important;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.sign-out:hover {
+    background-color: #c0392b !important;
+    transform: scale(1.05);
+}
