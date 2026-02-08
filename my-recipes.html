@@ -332,23 +332,37 @@ hr {
     background-color: #c0392b !important;
     transform: scale(1.05);
 }
+   .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-area img {
+    width: 45px;   /* حجم اللوقو */
+    height: auto;
+}    
 </style>
 </head>
 <body>
 
 <header class="main-header">
-    <img src="photo/logo.jpeg" alt="Logo">
+
+    <div class="logo-area">
+        <img src="photo/logo.jpeg" alt="Logo">
         <div>
             <h1>من دارنا</h1>
             <span class="tagline">Healthy Saudi Cuisine</span>
         </div>
     </div>
+
     <nav>
         <a href="user.html">Home</a>
         <a href="my-recipes.html">My Recipes</a>
         <a href="add-recipe.html" class="add-recipe-btn">Add Recipe</a>
         <a href="index.html" class="sign-out">Sign Out</a>
     </nav>
+
 </header>
 <div class="container">
     <h2>My Recipes</h2>
@@ -481,6 +495,7 @@ hr {
 </footer>
 </body>
 </html>
+
 
 
 
