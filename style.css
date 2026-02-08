@@ -655,4 +655,56 @@ nav a[href*="index"] {
   }
 }
 
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ستايل عام للأزرار */
+.actions button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px; /* pill shape */
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Favourite */
+.actions button:nth-child(1) {
+  background-color: #2f7d6d;
+  color: white;
+}
+
+.actions button:nth-child(1):hover {
+  background-color: #256559;
+  transform: translateY(-2px);
+}
+
+/* Like */
+.actions button:nth-child(2) {
+  background-color: #3a8f8a;
+  color: white;
+}
+
+.actions button:nth-child(2):hover {
+  background-color: #327a75;
+  transform: translateY(-2px);
+}
+
+/* Report */
+.actions button:nth-child(3) {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.actions button:nth-child(3):hover {
+  background-color: #e74c3c;
+  color: white;
+}
 
