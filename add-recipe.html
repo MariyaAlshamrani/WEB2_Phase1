@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <title>Add New Saudi Healthy Recipe</title>
   <style>
-    /* ===== 1. استيراد الخطوط ===== */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
 
-    /* ===== 2. إعدادات الصفحة العامة ===== */
     * {
         margin: 0;
         padding: 0;
@@ -16,7 +14,6 @@
 
     html {
         background-color: #fcfbf9;
-        /* نقش خلفية خفيف جداً وفخم */
         background-image: repeating-linear-gradient(
             135deg,
             rgba(0,0,0,0.015) 0,
@@ -34,14 +31,13 @@
         background: transparent;
     }
 
-    /* ===== 3. الهيدر الجذاب (Header) ===== */
     .main-header {
         background-color: #2f7d6d;
         background-image: linear-gradient(to right, #2f7d6d, #256559);
         color: #fff;
         padding: 12px 5%;
         display: flex;
-        justify-content: space-between; /* توزيع يمين ويسار */
+        justify-content: space-between; 
         align-items: center;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         position: sticky;
@@ -72,7 +68,6 @@
         color: #e0e0e0;
     }
 
-    /* القائمة والأزرار */
     nav {
         display: flex;
         align-items: center;
@@ -93,7 +88,6 @@
         background: rgba(255, 255, 255, 0.1);
     }
 
-    /* تمييز زر أضف وصفة */
     nav a[href*="add-recipe"] {
         background-color: #fcfbf9;
         color: #2f7d6d !important;
@@ -106,7 +100,6 @@
         transform: translateY(-2px);
     }
 
-    /* ===== 4. الحاويات والمحتوى ===== */
     .container, main, .user-page {
         max-width: 1100px;
         margin: 40px auto;
@@ -122,7 +115,6 @@
         margin-bottom: 20px;
     }
 
-    /* ===== 5. الجداول والأزرار الداخلية ===== */
     table {
         width: 100%;
         border-collapse: collapse;
@@ -151,7 +143,6 @@
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    /* ===== 6. أزرار الأكشن ===== */
     .submit-btn, .secondary-btn, button {
         background-color: #2f7d6d;
         color: white;
@@ -167,7 +158,6 @@
         background-color: #256559;
     }
 
-    /* ===== 7. الفوتر (Footer) ===== */
     .main-footer {
         background-color: #2f7d6d;
         color: white;
@@ -182,13 +172,11 @@
         margin: 5px 0;
     }
 
-    /* تحسينات الروابط العامة */
     a {
         color: #2f7d6d;
         text-decoration: none;
     }
 
-    /* لضمان تجاوب الهيدر مع الموبايل */
     @media (max-width: 768px) {
         .main-header {
             flex-direction: column;
@@ -201,18 +189,17 @@
             gap: 10px;
         }
     }
-      /* ===== استايلات الجداول (Tables) ===== */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     background-color: #fff;
     border-radius: 8px;
-    overflow: hidden; /* لضمان انحناء الحواف */
+    overflow: hidden; 
 }
 
 table th {
-    background-color: #f8faf9; /* خلفية فاتحة جداً مائلة للأخضر */
+    background-color: #f8faf9; 
     color: #2f7d6d;
     padding: 15px;
     border-bottom: 2px solid #2f7d6d;
@@ -230,18 +217,17 @@ table td {
 }
 
 table tr:hover {
-    background-color: #fcfbf9; /* تأثير خفيف عند مرور الماوس */
+    background-color: #fcfbf9; 
 }
 
 table img {
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 80px; /* حجم موحد للصور داخل الجدول */
+    width: 80px; 
     height: 80px;
 }
 
-/* ===== استايلات الفورم (Forms & Inputs) ===== */
 label {
     display: block;
     margin-top: 20px;
@@ -270,7 +256,7 @@ textarea {
 input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: #2f7d6d;
-    box-shadow: 0 0 0 3px rgba(47, 125, 109, 0.1); /* توهج أخضر خفيف */
+    box-shadow: 0 0 0 3px rgba(47, 125, 109, 0.1); 
 }
 
 textarea {
@@ -278,7 +264,6 @@ textarea {
     resize: vertical;
 }
 
-/* الأزرار داخل الفورم */
 .submit-btn, button[type="submit"] {
     background-color: #2f7d6d;
     color: white;
@@ -314,14 +299,13 @@ textarea {
     color: white;
 }
 
-/* تنسيق الخطوط الفاصلة داخل الفورم */
 hr {
     border: 0;
     border-top: 1px solid #eee;
     margin: 30px 0;
 }
       .sign-out {
-    background-color: #e74c3c !important; /* أحمر داكن */
+    background-color: #e74c3c !important; 
     color: white !important;
     padding: 8px 15px !important;
     border-radius: 6px;
@@ -333,9 +317,9 @@ hr {
     transform: scale(1.05);
 }
      .main-header img {
-    width: 45px;        /* حجم صغير */
+    width: 45px;        
     height: auto;
-    margin-right: 12px; /* مسافة عن العنوان */
+    margin-right: 12px; 
 }
 
 .main-header > div {
@@ -350,7 +334,7 @@ hr {
 }
 
 .logo-area img {
-    width: 45px;   /* حجم اللوقو */
+    width: 45px;   
     height: auto;
 }
 </style>
@@ -470,6 +454,7 @@ hr {
 
 </body>
 </html>
+
 
 
 
