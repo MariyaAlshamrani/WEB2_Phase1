@@ -1,121 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>View Recipe</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="main-header">
+<meta charset="UTF-8">
+<title>View Recipe</title>
 
-    <div class="logo-area">
-        <img src="photo/logo.jpeg" alt="Logo">
-        <div>
-            <h1>من دارنا</h1>
-            <span class="tagline">Healthy Saudi Cuisine</span>
-        </div>
+<style>
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 5%;
+  background: #2f7d6d;
+  color: white;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-area img {
+  width: 45px;
+}
+
+.logo-area h1 {
+  font-size: 1.5rem;
+}
+
+.tagline {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+nav {
+  display: flex;
+  gap: 14px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.sign-out {
+  background: #e74c3c;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+/* ===== Page ===== */
+.page {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+
+.page-title {
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+}
+
+/* ===== Recipe Card ===== */
+.recipe-card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  border: 1px solid #ddd;
+}
+
+/* Title + actions */
+.recipe-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.recipe-title {
+  font-size: 1.6rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.actions button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f4f4f4;
+  cursor: pointer;
+}
+
+/* Photo */
+.recipe-photo {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.recipe-photo img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+/* Blocks */
+.block {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 14px;
+}
+
+.block-title {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Creator */
+.creator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+/* Lists */
+.list {
+  padding-left: 20px;
+}
+
+.list li {
+  margin-bottom: 6px;
+}
+
+/* Video */
+.video-link {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: black;
+  background: #f4f4f4;
+}
+
+/* Comments */
+.comment {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.comment-form {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.comment-form textarea {
+  min-height: 80px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.comment-form button {
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f4f4f4;
+  cursor: pointer;
+}
+
+/* Footer */
+.main-footer {
+  margin-top: 40px;
+  padding: 30px;
+  text-align: center;
+  background: #2f7d6d;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .recipe-top {
+    flex-direction: column;
+  }
+
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="logo-area">
+    <img src="photo/logo.jpeg" alt="Logo">
+    <div>
+      <h1>من دارنا</h1>
+      <span class="tagline">Healthy Saudi Cuisine</span>
+    </div>
+  </div>
+
+  <nav>
+    <a href="user.html">Home</a>
+    <a href="my-recipes.html">My Recipes</a>
+    <a href="add-recipe.html">Add Recipe</a>
+    <a href="index.html" class="sign-out">Sign Out</a>
+  </nav>
+</header>
+
+<main class="page">
+  <article class="recipe-card">
+
+    <h1 class="page-title">Healthy Recipes</h1>
+
+    <div class="recipe-top">
+      <h2 class="recipe-title">Light Saleeg</h2>
+
+      <div class="actions">
+        <button>Add to Favourites</button>
+        <button>Like</button>
+        <button>Report</button>
+      </div>
     </div>
 
-    <nav>
-        <a href="user.html">Home</a>
-        <a href="my-recipes.html">My Recipes</a>
-        <a href="add-recipe.html" class="add-recipe-btn">Add Recipe</a>
-        <a href="index.html" class="sign-out">Sign Out</a>
-    </nav>
+    <div class="recipe-photo">
+      <img src="photo/saleeq.webp" alt="Saleeg">
+    </div>
 
-</header>
-<header>
-  <h1>Healthy Recipes</h1>
-</header>
+    <section class="block">
+      <h3 class="block-title">Recipe Creator</h3>
+      <div class="creator">
+        <img class="avatar" src="images/user.jpg" alt="Creator">
+        <p>Created by <strong>Lina A</strong></p>
+      </div>
+    </section>
 
+    <section class="block">
+      <h3 class="block-title">Details</h3>
+      <p><strong>Category:</strong> Healthy Hijazi</p>
+      <p>Light Taifi Saleeg.</p>
+    </section>
 
-<div class="actions">
-  <button>Add to Favourites</button>
-  <button>Like</button>
-  <button>Report</button>
-</div>
+    <section class="block">
+      <h3 class="block-title">Ingredients</h3>
+      <ul class="list">
+        <li>2 cups Egyptian rice</li>
+        <li>Whole chicken (skinless)</li>
+        <li>3 cups low-fat milk</li>
+        <li>Mastic & cardamom</li>
+        <li>Pinch of salt</li>
+      </ul>
+    </section>
 
+    <section class="block">
+      <h3 class="block-title">Instructions</h3>
+      <ol class="list">
+        <li>Boil the chicken with spices.</li>
+        <li>Cook rice in the broth.</li>
+        <li>Add milk and stir.</li>
+        <li>Roast chicken in air fryer.</li>
+      </ol>
+    </section>
 
-<section class="recipe-main">
-  <h2>Light Saleeg</h2>
-  <img src="photo/saleeq.webp" alt="Recipe Photo"width="300">
-</section>
+    <section class="block">
+      <h3 class="block-title">Video</h3>
+      <a class="video-link" href="https://www.tiktok.com/@healthy_meal/video/7508828350979280145" target="_blank">
+        Watch on TikTok
+      </a>
+    </section>
 
-<section class="creator">
-  <img src="images/user.jpg" alt="Creator Photo" width="80">
-  <p>Created by: <strong>Lina A</strong></p>
-</section>
+    <section class="block">
+      <h3 class="block-title">Comments</h3>
 
+      <div class="comment">
+        <p><strong>Ahmed:</strong> Looks delicious!</p>
+        <small>2026-02-01</small>
+      </div>
 
-<section>
-  <p><strong>Category:</strong> Healthy Hijazi</p>
-  <p>Light Taifi Saleeg.</p>
-</section>
+      <div class="comment">
+        <p><strong>Lina:</strong> Tried it and loved it 😍</p>
+        <small>2026-01-30</small>
+      </div>
 
-<!-- Ingredients -->
-<section>
-  <h3>Ingredients</h3>
-  <ul>
-  
-                            <li>2 cups of Egyptian Rice (washed well).</li>
-                            <li>Whole chicken (skinless).</li>
-                            <li>3 cups of Low-fat Milk.</li>
-                            <li>Mastic and Cardamom.</li>
-                            <li>A pinch of salt.</li>
-                        </ul>
+      <form class="comment-form">
+        <textarea placeholder="Write a comment..."></textarea>
+        <button>Add Comment</button>
+      </form>
+    </section>
 
-</section>
-
-<!-- Instructions -->
-<section>
-  <h3>Instructions</h3>
-   <ol>
-                            <li>Boil the chicken with spices.</li>
-                            <li>Cook the rice in the broth until soft.</li>
-                            <li>Add the milk and stir until creamy.</li>
-                            <li>Roast the chicken in an air fryer.</li>
-                        </ol>
-</section>
-
-
-<section>
-  <h3>Recipe Video</h3>
- <a href="https://www.tiktok.com/@healthy_meal/video/7508828350979280145" target="_blank">Watch On Tiktok</a>
-</section>
-
-
-<section class="comments">
-  <h3>Comments</h3>
-
-  <div class="comment">
-    <p><strong>Ahmed:</strong> Looks delicious!</p>
-    <small>2026-02-01</small>
-  </div>
-
-  <div class="comment">
-    <p><strong>Lina:</strong> Tried it and loved it 😍</p>
-    <small>2026-01-30</small>
-  </div>
-
-
-  <form>
-    <textarea placeholder="Write a comment..."></textarea><br>
-    <button type="submit">Add Comment</button>
-  </form>
-</section>
+  </article>
+</main>
 
 <footer class="main-footer">
-    <div class="footer-content">
-        <p>© 2026 Min Darna – Healthy Saudi Cuisine</p>
-        <p>Inspired by Saudi home kitchens with a healthy twist 🌿</p>
-    </div>
+  <p>© 2026 Min Darna – Healthy Saudi Cuisine</p>
+  <p>Inspired by Saudi home kitchens with a healthy twist 🌿</p>
 </footer>
 
-
 </body>
-
 </html>
-
-
-
-
