@@ -765,5 +765,20 @@ nav a[href*="index"] {
 .page h2:first-child {
   margin-top: 10px;
 }
+.main-header > div {
+    display: flex;
+    align-items: center;
+}
+
+ .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-area img {
+    width: 45px;   
+    height: auto;
+}
 
 
