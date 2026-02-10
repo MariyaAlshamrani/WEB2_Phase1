@@ -5,7 +5,7 @@
 <title>User Page</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="tables.css">
-     <style>
+    <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
 
     * {
@@ -51,6 +51,12 @@
         display: flex;
         align-items: center;
         gap: 15px;
+    }
+    
+    /* --- تم إضافة هذا الجزء لتصحيح حجم اللوجو --- */
+    .logo-area img {
+        width: 45px;   
+        height: auto;
     }
 
     .logo-area h1 {
@@ -102,6 +108,20 @@
         transform: translateY(-2px);
     }
 
+    /* --- تم إضافة تنسيق زر الخروج ليطابق الكود الصحيح --- */
+    .sign-out {
+        background-color: #e74c3c !important; 
+        color: white !important;
+        padding: 8px 15px !important;
+        border-radius: 6px;
+        font-size: 0.85rem;
+    }
+
+    .sign-out:hover {
+        background-color: #c0392b !important;
+        transform: scale(1.05);
+    }
+
     .container, main, .user-page {
         max-width: 1100px;
         margin: 40px auto;
@@ -122,6 +142,9 @@
         border-collapse: collapse;
         margin-top: 20px;
         font-size: 0.9rem;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden; 
     }
 
     table th {
@@ -130,6 +153,8 @@
         padding: 15px;
         border-bottom: 2px solid #2f7d6d;
         text-align: center;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
     }
 
     table td {
@@ -137,12 +162,19 @@
         border-bottom: 1px solid #eee;
         text-align: center;
         vertical-align: middle;
+        color: #444;
+    }
+
+    table tr:hover {
+        background-color: #fcfbf9; 
     }
 
     table img {
         border-radius: 8px;
         object-fit: cover;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        width: 80px; 
+        height: 80px;
     }
 
     .submit-btn, .secondary-btn, button {
@@ -191,94 +223,38 @@
             gap: 10px;
         }
     }
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden; 
-}
 
-table th {
-    background-color: #f8faf9; 
-    color: #2f7d6d;
-    padding: 15px;
-    border-bottom: 2px solid #2f7d6d;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    text-align: center;
-}
+    /* Input Styling added for consistency */
+    label {
+        display: block;
+        margin-top: 20px;
+        font-weight: 600;
+        color: #2f7d6d;
+        margin-bottom: 8px;
+    }
 
-table td {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    text-align: center;
-    vertical-align: middle;
-    color: #444;
-}
+    input[type="text"], 
+    input[type="url"], 
+    input[type="email"], 
+    input[type="password"], 
+    select, 
+    textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        color: #333;
+        transition: all 0.3s ease;
+        background-color: #fff;
+    }
 
-table tr:hover {
-    background-color: #fcfbf9; 
-}
-
-table img {
-    border-radius: 8px;
-    object-fit: cover;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 80px; 
-    height: 80px;
-}
-
-label {
-    display: block;
-    margin-top: 20px;
-    font-weight: 600;
-    color: #2f7d6d;
-    margin-bottom: 8px;
-}
-
-input[type="text"], 
-input[type="url"], 
-input[type="email"], 
-input[type="password"], 
-select, 
-textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    color: #333;
-    transition: all 0.3s ease;
-    background-color: #fff;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: #2f7d6d;
-    box-shadow: 0 0 0 3px rgba(47, 125, 109, 0.1); 
-}
-
-textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.submit-btn, button[type="submit"] {
-    background-color: #2f7d6d;
-    color: white;
-    padding: 14px 20px;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 30px;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
+    input:focus, select:focus, textarea:focus {
+        outline: none;
+        border-color: #2f7d6d;
+        box-shadow: 0 0 0 3px rgba(47, 125, 109, 0.1); 
+    }
 </style>
 </head>
 
