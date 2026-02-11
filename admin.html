@@ -138,7 +138,7 @@
     }
 
     .logo-area img {
-        width: 50px;       /* تثبيت حجم الشعار */
+        width: 50px;      
         height: 50px;
         object-fit: cover;
         border-radius: 6px;
@@ -212,7 +212,7 @@
     /* --- Responsive Header (Mobile Fix) --- */
     @media (max-width: 768px) {
         .main-header {
-            flex-direction: column; /* العناصر فوق بعض */
+            flex-direction: column;
             padding: 20px;
             gap: 15px;
         }
@@ -222,7 +222,7 @@
         }
 
         nav {
-            flex-wrap: wrap;       /* السماح للأزرار بالنزول لسطر جديد إذا ضاق المكان */
+            flex-wrap: wrap;      
             justify-content: center;
             width: 100%;
             gap: 10px;
@@ -264,14 +264,14 @@
 
     /* --- Tables --- */
     .table-container {
-        overflow-x: auto; /* يجعل الجدول قابل للتمرير في الجوال */
+        overflow-x: auto; 
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 15px;
-        min-width: 600px; /* ضمان عدم انكماش الجدول جداً */
+        min-width: 600px; 
     }
 
     table th {
@@ -355,6 +355,45 @@
     .bottom-signout a {
         color: #e74c3c;
         font-weight: bold;
+    }
+     
+    .main-header {
+        height: 80px !important;      
+        align-items: center !important;
+        padding: 0 5% !important;
+    }
+
+    .logo-area {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;        
+    }
+
+    .logo-area img {
+        width: 50px !important;        
+        height: 50px !important;
+        object-fit: cover !important;
+    }
+
+    .logo-area div {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    .logo-area h1 {
+        margin: 0 !important;         
+        padding: 0 !important;
+        line-height: 1.1 !important;   
+        font-size: 1.6rem !important;  
+    }
+
+    .logo-area .tagline {
+        margin: 0 !important;          
+        margin-top: 2px !important;    
+        line-height: 1 !important;
+        font-size: 0.75rem !important;
+        display: block !important;
     }
   </style>
 </head>
@@ -461,6 +500,7 @@
 
 </body>
 </html>
+
 
 
 
