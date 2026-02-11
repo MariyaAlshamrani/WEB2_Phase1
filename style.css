@@ -841,6 +841,125 @@ hr {
     height: auto;
 }
 
+  /* --- Main Header Styling --- */
+    .main-header {
+        background-color: #2f7d6d;
+        background-image: linear-gradient(to right, #2f7d6d, #256559);
+        color: #fff;
+        padding: 12px 5%;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    /* Logo Area */
+    .logo-area {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo-area img {
+        width: 50px;       
+        height: 50px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .logo-area div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-area h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.6rem;
+        color: #fff;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .logo-area .tagline {
+        font-size: 0.75rem;
+        opacity: 0.9;
+        font-style: italic;
+        color: #e0e0e0;
+    }
+
+    /* Navigation */
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav a {
+        color: #fff;
+        font-weight: 500;
+        font-size: 0.95rem;
+        padding: 8px 12px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Add Recipe Button Style */
+    nav a[href*="add-recipe"] {
+        background-color: #fcfbf9;
+        color: #2f7d6d !important;
+        font-weight: 700;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    nav a[href*="add-recipe"]:hover {
+        background-color: #ffffff;
+        transform: translateY(-2px);
+    }
+
+    /* Sign Out Button Style */
+    .sign-out {
+        background-color: #e74c3c !important; 
+        color: white !important;
+        padding: 8px 15px !important;
+    }
+
+    .sign-out:hover {
+        background-color: #c0392b !important;
+        transform: scale(1.05);
+    }
+
+    /* --- Responsive Header (Mobile Fix) --- */
+    @media (max-width: 768px) {
+        .main-header {
+            flex-direction: column; 
+            padding: 20px;
+            gap: 15px;
+        }
+
+        .logo-area {
+            margin-bottom: 5px;
+        }
+
+        nav {
+            flex-wrap: wrap;      
+            justify-content: center;
+            width: 100%;
+            gap: 10px;
+        }
+
+        nav a {
+            font-size: 0.85rem;
+            padding: 6px 10px;
+        }
+    }
  
     .main-header {
         height: 80px !important;      
@@ -880,3 +999,4 @@ hr {
         font-size: 0.75rem !important;
         display: block !important;
     }
+
